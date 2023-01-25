@@ -2,9 +2,9 @@ package web.model;
 
 
 public class Car {
-    private String model;
-    private String series;
-    private String color;
+    private final String model;
+    private final String series;
+    private final String color;
 
     public Car(String model, String series, String color) {
         this.model = model;
@@ -16,25 +16,16 @@ public class Car {
         return model;
     }
 
-    public void setModel(String model) {
-        this.model = model;
-    }
 
     public String getSeries() {
         return series;
     }
 
-    public void setSeries(String series) {
-        this.series = series;
-    }
 
     public String getColor() {
         return color;
     }
 
-    public void setColor(String color) {
-        this.color = color;
-    }
 
     @Override
     public String toString() {

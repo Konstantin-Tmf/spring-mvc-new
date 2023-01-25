@@ -9,10 +9,14 @@ import web.sevice.CarService;
 
 @Controller
 public class CarController {
-    private CarService carService = new CarService();
+    private final CarService carService;
+
+    public CarController(CarService carService) {
+        this.carService = carService;
+    }
 
     @GetMapping(value = "/cars")
-    public String listsCar(@RequestParam(value = "value", defaultValue = "5") int numberCars,
+    public String listsCar(@RequestParam(value = "count", defaultValue = "5") int numberCars,
                            Model model) {
 
         model.addAttribute("list", carService.filter(carService.listCar(), numberCars));

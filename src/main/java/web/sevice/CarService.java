@@ -1,20 +1,24 @@
 package web.sevice;
 
+import org.springframework.stereotype.Component;
 import web.dao.CarDao;
-import web.dao.CarImpDao;
 import web.model.Car;
 
-import java.util.stream.Collectors;
 import java.util.List;
-
+@Component
 public class CarService {
-    private CarDao carImpDao = new CarDao();
+    private final CarDao carDao;
 
-    public List<Car> listCar() {
-        return carImpDao.carList();
+    public CarService(CarDao carDao) {
+        this.carDao = carDao;
     }
 
-    public List<Car> filter(List<Car> cars, int value) {
-        return carImpDao.filterCar(cars, value);
+
+    public List<Car> listCar() {
+        return carDao.carList();
+    }
+
+    public List<Car> filter(List<Car> cars, int count) {
+        return carDao.filterCar(cars, count);
     }
 }
