@@ -5,8 +5,8 @@ import web.model.Car;
 import java.util.List;
 
 public interface CarDao {
-    List<Car> carList();
 
-    List<Car> filterCar(List<Car> cars, int value);
+
+    List<Car> filterCar(int value);
 
 }

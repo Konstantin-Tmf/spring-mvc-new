@@ -19,7 +19,7 @@ public class CarController {
     public String listsCar(@RequestParam(value = "count", defaultValue = "5") int numberCars,
                            Model model) {
 
-        model.addAttribute("list", carService.filter(carService.listCar(), numberCars));
+        model.addAttribute("list", carService.filterCar(numberCars));
         return "cars";
 
     }
