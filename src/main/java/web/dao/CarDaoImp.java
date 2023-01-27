@@ -9,7 +9,7 @@ import java.util.stream.Collectors;
 
 @Repository
 public class CarDaoImp implements CarDao {
-    List<Car> carList;
+    private final List<Car> carList;
 
     {
         carList = new ArrayList<>();

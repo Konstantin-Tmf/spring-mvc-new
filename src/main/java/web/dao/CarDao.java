@@ -7,6 +7,6 @@ import java.util.List;
 public interface CarDao {
 
 
-    List<Car> filterCar(int value);
+    List<Car> filterCar(int count);
 
 }
